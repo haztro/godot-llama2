@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3p623hl0ufif"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_phi6f"]
+[ext_resource type="Texture2D" uid="uid://cvmkrkdglu2vp" path="res://icon.svg" id="2_danw1"]
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_phi6f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.103
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = 0.255997
+offset_right = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Generate"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+min_value = 1.0
+value = 100.0
+exp_edit = true
+fill_mode = 4
+texture_progress = ExtResource("2_danw1")
+radial_fill_degrees = 60.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+autowrap_mode = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

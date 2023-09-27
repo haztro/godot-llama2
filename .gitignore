@@ -1,0 +1,11 @@
+
+.import/
+.godot/
+
+*.bin
+
+*.o
+*.lib
+*.a
+
+__pycache__/
